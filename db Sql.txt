@@ -1,0 +1,152 @@
+-- phpMyAdmin SQL Dump
+-- version 3.4.11.1deb1
+-- http://www.phpmyadmin.net
+--
+-- Client: localhost
+-- Généré le: Sam 23 Février 2013 à 01:16
+-- Version du serveur: 5.5.28
+-- Version de PHP: 5.4.4-11
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Base de données: `fe_fe`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `FRIEND`
+--
+
+CREATE TABLE IF NOT EXISTS `FRIEND` (
+  `idf` int(11) NOT NULL AUTO_INCREMENT,
+  `iduser1` int(11) NOT NULL,
+  `iduser2` int(11) NOT NULL,
+  PRIMARY KEY (`idf`),
+  UNIQUE KEY `iduser1` (`iduser1`,`iduser2`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `FRIENDT`
+--
+
+CREATE TABLE IF NOT EXISTS `FRIENDT` (
+  `idft` int(11) NOT NULL AUTO_INCREMENT,
+  `iduser1` int(11) NOT NULL,
+  `iduser2` int(11) NOT NULL,
+  PRIMARY KEY (`idft`),
+  KEY `iduser1` (`iduser1`),
+  KEY `iduser2` (`iduser2`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `IP`
+--
+
+CREATE TABLE IF NOT EXISTS `IP` (
+  `idip` int(11) NOT NULL AUTO_INCREMENT,
+  `iduser` int(11) NOT NULL,
+  `ip` varchar(20) NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY (`idip`),
+  KEY `iduser` (`iduser`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Contenu de la table `IP`
+--
+
+INSERT INTO `IP` (`idip`, `iduser`, `ip`, `date`) VALUES
+(1, 12, '77.192.0.184', '2013-02-22'),
+(2, 12, '77.192.0.184', '2013-02-22'),
+(3, 12, '77.192.0.184', '2013-02-22'),
+(4, 20, '77.192.0.184', '2013-02-22'),
+(5, 20, '77.192.0.184', '2013-02-22'),
+(6, 20, '77.192.0.184', '2013-02-22'),
+(7, 21, '88.188.200.82', '2013-02-22'),
+(8, 12, '0:0:0:0:0:0:0:1%0', '2013-02-22');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `SESSION`
+--
+
+CREATE TABLE IF NOT EXISTS `SESSION` (
+  `idc` int(11) NOT NULL AUTO_INCREMENT,
+  `cle` varchar(32) NOT NULL,
+  `iduser` int(11) NOT NULL,
+  `date_expi` date DEFAULT NULL,
+  PRIMARY KEY (`idc`),
+  UNIQUE KEY `cle` (`cle`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+
+--
+-- Contenu de la table `SESSION`
+--
+
+INSERT INTO `SESSION` (`idc`, `cle`, `iduser`, `date_expi`) VALUES
+(7, 'BbwyyBZ3cSBacLU0EscsxhqkD0D5DIRw', 20, '2013-02-22'),
+(8, 'rc8bpRKiquXmcrvVxvjc9zUT7Vq4djbb', 21, '2013-02-22'),
+(9, 'WtHLmGiPllqv5qRgyMw8GF7JSEBbwWXs', 12, '2013-02-22');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `USER`
+--
+
+CREATE TABLE IF NOT EXISTS `USER` (
+  `iduser` int(11) NOT NULL AUTO_INCREMENT,
+  `login` varchar(12) NOT NULL,
+  `nom` varchar(12) NOT NULL,
+  `prenom` varchar(12) NOT NULL,
+  `mail` varchar(24) NOT NULL,
+  `pwd` varchar(16) NOT NULL,
+  `date_inscription` date DEFAULT NULL,
+  `last_co` date DEFAULT NULL,
+  PRIMARY KEY (`iduser`),
+  UNIQUE KEY `login` (`login`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+
+--
+-- Contenu de la table `USER`
+--
+
+INSERT INTO `USER` (`iduser`, `login`, `nom`, `prenom`, `mail`, `pwd`, `date_inscription`, `last_co`) VALUES
+(12, 'Pene', 'ferreira', 'Stephane', 'ferreira@test.com', 'maimai', '2013-02-22', '2013-02-22'),
+(20, 'Brubru', 'Fernan', 'Bruno', 'email@dz.com', 'maimai', '2013-02-22', '2013-02-22'),
+(21, 'a', 'a', 'a', 'a@a.ds', 'a', '2013-02-22', '2013-02-22');
+
+--
+-- Contraintes pour les tables exportées
+--
+
+--
+-- Contraintes pour la table `FRIENDT`
+--
+ALTER TABLE `FRIENDT`
+  ADD CONSTRAINT `iduser2` FOREIGN KEY (`iduser2`) REFERENCES `USER` (`iduser`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `iduser1` FOREIGN KEY (`iduser1`) REFERENCES `USER` (`iduser`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `IP`
+--
+ALTER TABLE `IP`
+  ADD CONSTRAINT `iduser` FOREIGN KEY (`iduser`) REFERENCES `USER` (`iduser`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

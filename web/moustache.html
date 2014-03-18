@@ -1,0 +1,78 @@
+{{#post}}
+<div class="{{_id}}">
+    <div id="post" >
+        <div id="avatar">
+            <a href="profil.jsp?id={{iduserP}}">
+                <img src="img/avatar.jpg" alt="" >
+            </a>
+        </div>
+        <a class=\"button4\" style="{{supp}}" onclick=\"hideShowPost(\'{{_id}}\')\" >
+            x
+        </a>
+        <div id="author">
+            <a href="profil.jsp?id={{iduserP}}">
+                {{nameuserP}} 
+            </a>
+            <a class="button6" >+
+            </a> 
+            <div style="{{a}}"> à 
+                <a href="profil.jsp?id={{iduserA}}">{{nameuserA}} 
+                </a>
+                <a class="button6" >+
+                </a> 
+            </div> 
+            <div style="{{via}}"> via 
+                <a href="profil.jsp?id={{iduserH}}">{{nameuserH}} 
+                </a>
+                <a class="button6" >+
+                </a> 
+            </div> 
+        </div>
+        <div id="text" name="{{_id}}_text">{{text}}
+        </div><div id="date">{{date}}
+        </div>
+        <a class="button2" onclick="hideShowCom(\'.{{_id}}_c\')">Com\'s (<span>{{comms}}</span>)
+        </a> 
+        <a class="button3_v" style="{{rePost}}" onclick="rePost({{iduserH}},\'{{_id}}\')" >
+            <img src="img/via.png" width="19" height="19" />
+        </a> 
+        <a class="button3" onclick="jaimePas(\'{{_id}}\')">- <span>{{unlike}}</span>
+        </a> 
+        <a class="button3" onclick="jaime(\'{{_id}}\')">+ <span>{{like}}</span>
+        </a>
+    </div>
+    <div id="comments" style="display:none" class="{{_id}}_c">
+        {{#commentaires}}
+        <div id="comment">
+            <div id="avatar">
+                <a href="profil.jsp?id={{iduser}}">
+                    <img src="img/avatar.jpg" alt="" >
+                </a>
+            </div>
+            <div id="author">
+                <a href="profil.jsp?id={{iduser}}">{{nameuser}}
+                </a>
+                <a class="button6" >+
+                </a>
+            </div>
+            <div id="text">{{text}}
+            </div>
+            <div id="date">{{date}}
+            </div>
+            <a class="button5" onclick="jaime(\'{{_id}}\',\'{{id}}\')">+ <span>{{like}}</span>
+            </a> 
+            <a class="button5" onclick="jaimePasC(\'{{_id}}\',\'{{id}}\')">- <span>{{unlike}}</span>
+            </a>
+            <div id="diviseur">
+
+            </div>
+        </div>
+        {{/commentaires}}
+        <div id="comms">
+            <form id="comms" action="">
+                <textarea type="text" class="coms" name="com{{_id}}" placeholder="Réagis !" onclick="agrandCom(this)"></textarea>
+                <a class="button5" onclick="envoisCom(\'{{_id}}\');redCom(\'com{{_id}}\')">Envoyer</a>
+        </div>
+    </div>
+</div>
+{{/post}}'

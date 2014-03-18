@@ -1,0 +1,9 @@
+- Optionel , faire des requette plsu complex mongodb utilisant des $or au lieu de fait de la concaténation de resultat
+( Pour avoir un réponse trié par ordre de date  , cf : http://docs.mongodb.org/manual/reference/operator/or/#_S_or )
+- Faire le map reduce pour la recherche de personne par nom , recherche de mot dans les commentaires ou les post 
+( db.people.find({ text: /Zidane/ }) , recupere tous les post contenant le mot Zidane)
+
+
+- caractere blanc en fin de chaine coté serv (fait que coter client)
+- poster un message sur un mur que d'un amis seulement
+- profil  et flux , affiché add amis que si il n'est pas en amis 

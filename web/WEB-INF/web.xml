@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+    <servlet>
+        <servlet-name>Test</servlet-name>
+        <servlet-class>test.TestServlet</servlet-class>
+    </servlet>
+    
+    
+    
+    
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>servlets.auth.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>servlets.auth.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewUser</servlet-name>
+        <servlet-class>servlets.auth.NewUserServlet</servlet-class>
+    </servlet>
+  
+  
+    <servlet>
+        <servlet-name>CLike</servlet-name>
+        <servlet-class>servlets.com.CLikeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PLike</servlet-name>
+        <servlet-class>servlets.com.PLikeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddComment</servlet-name>
+        <servlet-class>servlets.com.AddCommentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SupPost</servlet-name>
+        <servlet-class>servlets.com.SupPostServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SupCom</servlet-name>
+        <servlet-class>servlets.com.SupComServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddPost</servlet-name>
+        <servlet-class>servlets.com.AddPostServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddImg</servlet-name>
+        <servlet-class>servlets.com.AddImgServlet</servlet-class>
+    </servlet>
+  
+  
+    
+    
+    
+    <servlet>
+        <servlet-name>GetMessServlet</servlet-name>
+        <servlet-class>servlets.mess.GetMessServlet</servlet-class>
+    </servlet>
+    
+    
+    <servlet>
+        <servlet-name>SendMessServlet</servlet-name>
+        <servlet-class>servlets.mess.SendMessServlet</servlet-class>
+    </servlet>
+   
+    
+    
+    <servlet>
+        <servlet-name>ListFriend</servlet-name>
+        <servlet-class>servlets.friend.ListFriendServlet</servlet-class>
+    </servlet>
+        
+    <servlet>   
+        <servlet-name>AddFriend</servlet-name>
+        <servlet-class>servlets.friend.AddFriendServlet</servlet-class>
+    </servlet>
+        
+        
+    <servlet>
+        <servlet-name>AccFriend</servlet-name>
+        <servlet-class>servlets.friend.AccFriendServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveFriend</servlet-name>
+        <servlet-class>servlets.friend.RemoveFriendServlet</servlet-class>
+    </servlet>
+  
+
+    <servlet>
+        <servlet-name>Search</servlet-name>
+        <servlet-class>servlets.search.SearchServlet</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>StatsServlet</servlet-name>
+        <servlet-class>servlets.search.StatsServlet</servlet-class>
+    </servlet>
+    
+    
+    <servlet-mapping>
+        <servlet-name>NewUser</servlet-name>
+        <url-pattern>/newuser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet-mapping>
+        <servlet-name>CLike</servlet-name>
+        <url-pattern>/clike</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PLike</servlet-name>
+        <url-pattern>/plike</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddComment</servlet-name>
+        <url-pattern>/addcomment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SupPost</servlet-name>
+        <url-pattern>/suppost</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SupCom</servlet-name>
+        <url-pattern>/supcom</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddPost</servlet-name>
+        <url-pattern>/addpost</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddImg</servlet-name>
+        <url-pattern>/addimg</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet-mapping>
+        <servlet-name>ListFriend</servlet-name>
+        <url-pattern>/listfriend</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddFriend</servlet-name>
+        <url-pattern>/addfriend</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccFriend</servlet-name>
+        <url-pattern>/accfriend</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveFriend</servlet-name>
+        <url-pattern>/removefriend</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet-mapping>
+        <servlet-name>Search</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+    
+    <servlet-mapping>
+        <servlet-name>GetMessServlet</servlet-name>
+        <url-pattern>/mess</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+    <servlet-mapping>
+        <servlet-name>SendMessServlet</servlet-name>
+        <url-pattern>/mess</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>StatsServlet</servlet-name>
+        <url-pattern>/stats</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet-mapping>
+        <servlet-name>Test</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    
+    
+</web-app>
