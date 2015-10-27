@@ -12,6 +12,7 @@ public class DBStatic {
     static String mysql_password = "ferreira";
     static boolean mysql_pooling = true ;
     static String mysql_db = "fe_fe";
+    static String token = "CnX26RQOVLgIYINzeF9mFj+i/5+aeDxTD5qbm9mogEaTferKcvUa0MCawwbJVWiQkh9QFS1HEzL3V9kMd06nFw==";
     //tables
     //SQL
     public static final String TABLE_SESSION = "SESSION";
